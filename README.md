@@ -1,38 +1,33 @@
 <!--
   This is your PROFILE README. It goes in a repo named exactly after your
-  username (e.g. github.com/OCTOCAT/OCTOCAT) so GitHub shows it on your profile.
-  Replace the ALL-CAPS placeholders. Widths 370/490 keep the portrait and info
-  card the same height -- if you change the info card's H, re-match these.
+  username (github.com/RaghavParasher/RaghavParasher) so GitHub shows it on your profile.
 -->
 <div align="center">
 
 <table>
 <tr>
-<td valign="top"><img src="./avi-ascii.svg" width="370" alt="ASCII portrait" /></td>
+<td valign="top"><img src="./raghav-ascii.svg" width="370" alt="Raghav's ASCII portrait" /></td>
 <td valign="top"><img src="./info-card.svg" width="490" alt="Experience, stack, highlights" /></td>
 </tr>
 </table>
 
-## Subhankar Roy
+## Raghav Parasher
 
-**Full Stack Developer · AI Builder · UI/UX Enthusiast**
+**Software Engineer · Full Stack Developer · MERN Stack Developer**
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-subhxroy.framer.website-0d1117?style=for-the-badge&logo=vercel&logoColor=white)](https://subhxroy.framer.website/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-subh--roy-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/subh-roy-6a871133b)
-[![Instagram](https://img.shields.io/badge/Instagram-subhroyx-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/subhroyx)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Raghav_Parasher-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/raghavparasher)
+[![GitHub](https://img.shields.io/badge/GitHub-RaghavParasher-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/RaghavParasher)
 
 <br>
 
 ### 🛠️ Featured Projects
 
-| Project | Description | Language |
+| Project | Description | Stack / Badge |
 | :--- | :--- | :--- |
-| 🎨 **[framerx](https://github.com/subhxroy/framerx)** | A modern Framer-inspired web experience focused on premium UI, smooth interactions, and responsive design. | ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) |
-| 📡 **[sentira](https://github.com/subhxroy/sentira)** | A privacy-first surveillance system that utilizes Wi-Fi signals to detect presence without the use of cameras. | ![Rust](https://img.shields.io/badge/-Rust-000000?style=flat-square&logo=rust&logoColor=white) |
-| 📈 **[ai-trader](https://github.com/subhxroy/ai-trader)** | An AI-powered algorithmic trading bot designed to analyze market trends and execute trades. | ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white) |
-| 🛒 **[meatdae](https://github.com/subhxroy/meatdae)** | A full-featured online e-commerce platform with an integrated payment gateway and a dedicated admin panel. | ![CSS](https://img.shields.io/badge/-CSS-1572B6?style=flat-square&logo=css3&logoColor=white) |
-| 🎵 **[openify](https://github.com/subhxroy/openify)** | A free, retro-themed desktop music player designed for a seamless listening experience. | ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) |
-| 🔒 **[anonymous](https://github.com/subhxroy/anonymous)** | A premium privacy-first ephemeral messaging application with secure digital vaults. | ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) |
+| 🎓 **[skillforge-academy](https://github.com/RaghavParasher/skillforge-academy)** | Interactive tech education and online learning platform designed to streamline knowledge delivery. | ![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black) ![Node](https://img.shields.io/badge/-Node.js-339933?style=flat-square&logo=node.js&logoColor=white) |
+| ⚡ **[ai-study-buddy](https://github.com/RaghavParasher/ai-study-buddy)** | Intelligent LLM-powered study assistant and learning companion for summarizing notes and answering queries. | ![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black) ![AI](https://img.shields.io/badge/-Gemini_API-8E75C2?style=flat-square&logo=google&logoColor=white) |
+| 💸 **[equisplit](https://github.com/RaghavParasher/equisplit)** | Shared expense tracker and splitter application to manage group payments and balance sheets. | ![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black) ![Node](https://img.shields.io/badge/-Node.js-339933?style=flat-square&logo=node.js&logoColor=white) |
+| ☁️ **[skypulse-weather](https://github.com/RaghavParasher/skypulse-weather)** | Responsive weather forecasting web application with sleek animations and localized weather data. | ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) ![CSS](https://img.shields.io/badge/-CSS3-1572B6?style=flat-square&logo=css3&logoColor=white) |
 
 <br>
 

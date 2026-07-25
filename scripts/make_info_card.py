@@ -14,7 +14,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "..", "info-card.svg")
 STATIC = bool(os.environ.get("STATIC"))
 
-W, H = 480, 376
+W, H = 480, 400
 PAD = 20
 TITLEBAR_H = 30
 KEY_X = PAD
@@ -43,25 +43,26 @@ ACCENT = "#22d3ee"
 #    ("bul", text)          -> green dot + light bullet
 #    ("gap",)               -> a little vertical space
 # ===========================================================================
-HOST = "subhxroy"   # shown as  subhxroy@github  in the header
+HOST = "RaghavParasher"   # shown as  RaghavParasher@github  in the header
 
 ROWS = [
     ("host",),
-    ("kv", "Now", "Full Stack Developer @ DIZIVER"),
-    ("kv", "Focus", "AI-powered SaaS & Modern Web Apps"),
-    ("kv", "Edu", "Assam, India"),
+    ("kv", "Now", "Software Engineer | MERN & AI Web Apps"),
+    ("kv", "Focus", "Full Stack, AI Integration, REST APIs"),
+    ("kv", "Edu", "B.Tech CSE (FSD), K.R. Mangalam University (2022-2026)"),
     ("gap",),
     ("sec", "Stack"),
-    ("kv", "Frontend", "React, Next.js, TypeScript, Tailwind, Framer Motion"),
-    ("kv", "Backend", "Node.js, Express, Prisma, Firebase"),
-    ("kv", "Database", "MongoDB, SQLite, PostgreSQL"),
-    ("kv", "AI / ML", "Gemini API, OpenAI, SSE-streaming"),
-    ("kv", "Cloud", "Firebase, Vercel, Netlify"),
+    ("kv", "Frontend", "HTML5, CSS3, JavaScript, React.js"),
+    ("kv", "Backend", "Node.js, Express.js"),
+    ("kv", "Database", "MongoDB"),
+    ("kv", "Cloud", "Microsoft Azure"),
+    ("kv", "Tools", "Git, GitHub, Docker, Postman, VS Code"),
     ("gap",),
     ("sec", "Highlights"),
-    ("bul", "Nexus AI — Perplexity-style Search & Research SaaS"),
-    ("bul", "Anonym — Zero-Knowledge Encrypted Messaging"),
-    ("bul", "Openify — Desktop Music Player with Retro UI"),
+    ("bul", "Skillforge Academy - Interactive Tech Learning Platform"),
+    ("bul", "Skypulse Weather - Responsive Weather Forecasting"),
+    ("bul", "AI Study Buddy - Intelligent Learning & Summarization Helper"),
+    ("bul", "Equisplit - Shared Expense Management & Splitter Application"),
 ]
 
 
