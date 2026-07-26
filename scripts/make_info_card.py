@@ -21,15 +21,15 @@ KEY_X = PAD
 VAL_X = PAD + 92
 LINE_H = 20.5
 
-BG = "#0d1117"
-BG2 = "#111722"
-FRAME = "#30363d"
-MUTED = "#7d8590"
-INK = "#c9d1d9"
-KEY = "#ffa657"      # orange keys (matches Andrew)
-SECTION = "#58a6ff"  # blue section headers
-GREEN = "#3fb950"
-ACCENT = "#22d3ee"
+BG = "#21252b"
+BG2 = "#1e2227"
+FRAME = "#3e4451"
+MUTED = "#abb2bf"
+INK = "#abb2bf"
+KEY = "#e06c75"      # One Dark pink/red keys
+SECTION = "#61afef"  # One Dark blue headers
+GREEN = "#98c379"    # One Dark green bullets
+ACCENT = "#c678dd"   # One Dark purple highlights
 
 # ===========================================================================
 #  EDIT THIS  -- your info panel. It re-lays-out automatically; if it gets too
