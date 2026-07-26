@@ -29,16 +29,21 @@ img = ImageOps.equalize(img)
 img = ImageEnhance.Contrast(img).enhance(1.45)
 img = ImageEnhance.Brightness(img).enhance(1.15)
 
-# 3. Create a vignette mask using numpy (shifted upwards to keep the cap/head visible)
+# 3. Create a vignette mask using numpy (fade sides and bottom only to keep the cap fully visible)
 w, h = img.size
 x = np.linspace(-1.0, 1.0, w)
 y = np.linspace(-1.0, 1.0, h)
 xx, yy = np.meshgrid(x, y)
-# Shift center vertically upwards by 0.3 units
-dist = np.sqrt(xx**2 + (yy + 0.3)**2)
 
-# Vignette: wider visibility and sharper falloff at edges
-vignette = np.clip((1.0 - dist) * 1.8 + 0.15, 0, 1)
+# Fade left/right sides: keep central 60% visible, fade outer 20% on each side
+fade_x = np.clip((1.0 - np.abs(xx)) * 2.5, 0, 1)
+
+# Fade bottom only: keep top 60% visible, fade bottom 40%
+fade_y = np.clip((1.0 - yy) * 1.4, 0, 1)
+
+# Combine fades
+vignette = fade_x * fade_y
+vignette = np.clip(vignette, 0, 1)
 
 # Convert vignette numpy array back to PIL image and apply Gaussian blur to smooth it
 vignette_img = Image.fromarray((vignette * 255.0).astype(np.uint8), mode="L")
