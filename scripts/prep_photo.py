@@ -13,6 +13,7 @@ import sys
 
 from PIL import Image, ImageOps, ImageEnhance, ImageFilter
 import numpy as np
+from rembg import remove
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 INP = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, "..", "source-photo.jpg")
@@ -27,41 +28,46 @@ except Exception as e:
 
 # Rotate based on EXIF tag if present
 img = ImageOps.exif_transpose(img)
-w, h = img.size
 
-# 2. Crop to isolate face/cap (removes the 20% sky at the top)
+# 2. Remove background using rembg
+print("removing background...")
+cutout = remove(img)
+
+# 3. Crop to isolate face/cap (removes the 20.5% sky at the top)
+w, h = cutout.size
 y_start = int(0.205 * h)
 y_end = int(0.755 * h)
-img = img.crop((0, y_start, w, y_end)).convert("L")
+cutout = cutout.crop((0, y_start, w, y_end))
 
-# 3. Boost local contrast (histogram equalization + global contrast boost)
-img = ImageOps.equalize(img)
-img = ImageEnhance.Contrast(img).enhance(1.45)
-img = ImageEnhance.Brightness(img).enhance(1.15)
+# 4. Extract RGB and Alpha
+rgb = np.array(cutout.convert("RGB"))
+alpha = np.array(cutout.split()[-1]).astype(np.float32) / 255.0
 
-# 4. Create a vignette mask (fade sides and bottom only to keep the cap fully visible)
-w_crop, h_crop = img.size
-x = np.linspace(-1.0, 1.0, w_crop)
-y = np.linspace(-1.0, 1.0, h_crop)
-xx, yy = np.meshgrid(x, y)
+# 5. Apply soft vertical fade to the bottom 30% of the alpha mask
+h_crop, w_crop = alpha.shape
+y_indices = np.arange(h_crop)
+bottom_fade = np.ones(h_crop, dtype=np.float32)
+fade_start = int(h_crop * 0.70)
+bottom_fade[fade_start:] = np.clip((h_crop - y_indices[fade_start:]) / (h_crop - fade_start), 0, 1)
 
-# Fade left/right sides: keep central 44% visible, fade outer 28% on each side
-fade_x = np.clip((1.0 - np.abs(xx)) * 1.8, 0, 1)
+# Multiply alpha by the bottom fade
+alpha = alpha * bottom_fade[:, np.newaxis]
 
-# Fade bottom only: keep top 60% visible, fade bottom 40%
-fade_y = np.clip((1.0 - yy) * 1.4, 0, 1)
+# Smooth the alpha mask slightly to avoid jagged edges
+alpha_img = Image.fromarray((alpha * 255.0).astype(np.uint8), mode="L")
+alpha_img = alpha_img.filter(ImageFilter.GaussianBlur(radius=1.5))
+alpha = np.array(alpha_img).astype(np.float32) / 255.0
 
-# Combine fades
-vignette = fade_x * fade_y
-vignette = np.clip(vignette, 0, 1)
+# 6. Convert RGB to grayscale and boost contrast/brightness
+gray = Image.fromarray(rgb).convert("L")
+gray = ImageOps.equalize(gray)
+gray = ImageEnhance.Contrast(gray).enhance(1.5)
+gray = ImageEnhance.Brightness(gray).enhance(1.15)
+gray_arr = np.array(gray).astype(np.float32)
 
-# Convert vignette numpy array back to PIL image and apply Gaussian blur to smooth it
-vignette_img = Image.fromarray((vignette * 255.0).astype(np.uint8), mode="L")
-vignette_img = vignette_img.filter(ImageFilter.GaussianBlur(radius=w_crop / 20))
+# 7. Composite onto pure white: out = gray * alpha + 255 * (1 - alpha)
+out = gray_arr * alpha + 255.0 * (1.0 - alpha)
+out = np.clip(out, 0, 255).astype(np.uint8)
 
-# 5. Composite onto white using the vignette image as mask
-bg = Image.new("L", (w_crop, h_crop), 255)
-out = Image.composite(img, bg, vignette_img)
-
-out.save(OUT)
-print("wrote prepped image to", OUT, out.size)
+Image.fromarray(out, mode="L").save(OUT)
+print("wrote prepped image to", OUT, out.shape)
