@@ -58,11 +58,10 @@ alpha_img = Image.fromarray((alpha * 255.0).astype(np.uint8), mode="L")
 alpha_img = alpha_img.filter(ImageFilter.GaussianBlur(radius=1.5))
 alpha = np.array(alpha_img).astype(np.float32) / 255.0
 
-# 6. Convert RGB to grayscale and boost contrast/brightness
+# 6. Convert RGB to grayscale and boost contrast/brightness (without equalization to avoid brightness blowout)
 gray = Image.fromarray(rgb).convert("L")
-gray = ImageOps.equalize(gray)
-gray = ImageEnhance.Contrast(gray).enhance(1.5)
-gray = ImageEnhance.Brightness(gray).enhance(1.15)
+gray = ImageEnhance.Contrast(gray).enhance(1.3)
+gray = ImageEnhance.Brightness(gray).enhance(0.95)
 gray_arr = np.array(gray).astype(np.float32)
 
 # 7. Composite onto pure white: out = gray * alpha + 255 * (1 - alpha)
