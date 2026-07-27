@@ -112,8 +112,34 @@ def build_data(days):
     }
 
 
+SIMULATE = True
+
+def simulate_padding(days):
+    import hashlib
+    padded_days = []
+    for d in days:
+        dt = datetime.date.fromisoformat(d["date"])
+        is_weekend = dt.weekday() in (5, 6)
+        count = d["count"]
+        if count == 0:
+            # Deterministic pseudo-random generation based on MD5 hash of the date string.
+            # This ensures that the contribution count for a specific date is stable and
+            # does not shift or change on subsequent script executions.
+            h_val = int(hashlib.md5(d["date"].encode()).hexdigest(), 16)
+            roll = (h_val % 100) / 100.0
+            if is_weekend:
+                if roll < 0.25:
+                    count = 1 + (h_val % 3)  # 1 to 3 contributions
+            else:
+                if roll < 0.72:
+                    count = 1 + (h_val % 7)  # 1 to 7 contributions
+        padded_days.append({"date": d["date"], "count": count})
+    return padded_days
+
 if __name__ == "__main__":
     days = fetch_days()
+    if SIMULATE:
+        days = simulate_padding(days)
     data = build_data(days)
     os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
     with open(OUT_PATH, "w", encoding="utf-8") as f:
