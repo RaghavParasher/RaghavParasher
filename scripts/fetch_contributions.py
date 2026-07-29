@@ -112,7 +112,7 @@ def build_data(days):
     }
 
 
-SIMULATE = True
+SIMULATE = False
 
 def simulate_padding(days):
     import hashlib
