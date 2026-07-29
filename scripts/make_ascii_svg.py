@@ -49,7 +49,7 @@ BG = "#21252b"
 BG2 = "#1e2227"
 FRAME = "#3e4451"
 TITLE_TEXT = "#abb2bf"
-INK = "#e5c07b"      # the single ascii color (matches One Dark yellow/orange)
+INK = "#bd93f9"      # Neon Purple/Lavender ASCII color
 CURSOR = "#528bff"   # One Dark blue cursor
 
 # ---- reveal timing (one-shot; a cursor rasters top -> bottom) -------------
