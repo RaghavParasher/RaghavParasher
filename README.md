@@ -7,7 +7,7 @@
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
 <td valign="top" width="48%">
-<img src="./avatar-animated.svg" width="100%" alt="Raghav Parasher Animated Terminal Portrait" />
+<img src="./avatar-live.gif" width="100%" alt="Raghav Parasher Live Animated Terminal Portrait" />
 </td>
 <td valign="top"><img src="./info-card.svg" width="490" alt="Experience, stack, highlights" /></td>
 </tr>
