@@ -7,7 +7,7 @@
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
 <td valign="top" width="48%">
-<img src="./avatar-pixel.jpg" width="100%" alt="Raghav Parasher 16-Bit Pixel Art Avatar" />
+<img src="./avatar-matrix.jpg" width="100%" alt="Raghav Parasher High-Definition Matrix Terminal Portrait" />
 </td>
 <td valign="top"><img src="./info-card.svg" width="490" alt="Experience, stack, highlights" /></td>
 </tr>
