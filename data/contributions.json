@@ -1,12 +1,12 @@
 {
   "username": "RaghavParasher",
-  "generated_at": "2026-09-12T02:39:38Z",
+  "generated_at": "2026-09-13T02:37:45Z",
   "range": {
-    "start": "2025-09-07",
-    "end": "2026-09-12"
+    "start": "2025-09-14",
+    "end": "2026-09-13"
   },
-  "total_contributions": 1610,
-  "active_days": 281,
+  "total_contributions": 1579,
+  "active_days": 275,
   "avg_per_active_day": 5.7,
   "current_streak": {
     "length": 0,
@@ -25,7 +25,7 @@
   "monthly": [
     {
       "month": "2025-09",
-      "total": 99
+      "total": 68
     },
     {
       "month": "2025-10",
@@ -77,34 +77,6 @@
     }
   ],
   "days": [
-    {
-      "date": "2025-09-07",
-      "count": 0
-    },
-    {
-      "date": "2025-09-08",
-      "count": 9
-    },
-    {
-      "date": "2025-09-09",
-      "count": 10
-    },
-    {
-      "date": "2025-09-10",
-      "count": 4
-    },
-    {
-      "date": "2025-09-11",
-      "count": 2
-    },
-    {
-      "date": "2025-09-12",
-      "count": 4
-    },
-    {
-      "date": "2025-09-13",
-      "count": 2
-    },
     {
       "date": "2025-09-14",
       "count": 1
@@ -1559,6 +1531,10 @@
     },
     {
       "date": "2026-09-12",
+      "count": 0
+    },
+    {
+      "date": "2026-09-13",
       "count": 0
     }
   ]
